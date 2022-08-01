@@ -1,26 +1,49 @@
 .our-team {
     background-color: #F5F4FA;
+
 }
 
 .our-team__list {
-    display: flex;
     @extend %list;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+
+    @media screen and (max-width:767px) {
+        --items: 1;
+    }
+
+    @media screen and (min-width:768px) {
+        --items: 2;
+    }
+
+    @media screen and (min-width:1200px) {
+        --items: 4;
+    }
 }
 
 .team-member {
-    box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14), 0px 2px 1px rgba(0, 0, 0, 0.2);
-    border-radius: 0px 0px 4px 4px;
+    flex-basis: calc((100% - var(--indent) * (var(--items) - 1)) / var(--items));
 
-    &:not(:last-child) {
-    margin-right: 30px;
+    @media screen and (max-width:767px) {
+        max-width: 450px;
     }
+
+    box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12),
+    0px 1px 1px rgba(0, 0, 0, 0.14),
+    0px 2px 1px rgba(0, 0, 0, 0.2);
+    border-radius: 0px 0px 4px 4px;
 }
 
 .team-member__box {
     padding-top: 30px;
-    padding-bottom: 30px;
-    background-color: $tertiary-text-color;
+    padding-bottom: 24px;
+    background-color: var(--tertiary-text-color);
     border-radius: 4px;
+
+    @media screen and (min-width: 1200px) {
+        padding-bottom: 30px;
+    }
 }
 
 .team-member__name {
@@ -46,18 +69,18 @@
 }
 
 .team-member__sm-link {
-    color: $tertiary-background-color;
-    transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1),
-    background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+    color: var(--tertiary-background-color);
+    transition: color var(--anim),
+        background-color var(--anim);
 
     &:visited {
-    color: $tertiary-background-color;
+        color: var(--tertiary-background-color);
     }
 
     &:hover,
     &:focus {
-    background-color: $accent-color;
-    color: $tertiary-text-color;
+        background-color: var(--accent-color);
+        color: var(--tertiary-text-color);
     }
 
 }

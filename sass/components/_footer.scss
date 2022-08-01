@@ -1,7 +1,7 @@
 .footer {
     padding-top: 60px;
     padding-bottom: 60px;
-    background-color: $footer-bg-color;
+    background-color: var(--footer-bg-color);
 }
 
 .footer__logo {
@@ -10,14 +10,44 @@
 }
 
 .footer__box {
-    display: flex;
+    @media screen and (max-width: 767px) {
+        text-align: center;
+    }
+
+
+    @media screen and (min-width:768px) and (max-width:1199px) {
+        display: flex;
+        flex-direction: column;
+    }
+
+    @media screen and (min-width:1200px) {
+        display: flex;
+    }
+
 }
 
 /* Стили списка адресов */
 
 .addres-thumb {
     width: 231px;
-    margin-right: 70px;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+
+    @media screen and (max-width: 767px) {
+        margin-bottom: 48px;
+    }
+
+    @media screen and (min-width:768px) and (max-width:1199px) {
+        margin-right: 160px;
+    }
+
+
+    @media screen and (min-width:1200px) {
+        margin-right: 70px;
+        text-align: left;
+    }
+
 }
 
 .address__list {
@@ -29,31 +59,43 @@
 }
 
 .logo-label--white {
-    color: $tertiary-text-color;
+    color: var(--tertiary-text-color);
 }
 
 .address__item {
     font-style: normal;
     line-height: 1.7;
-    color: $tertiary-text-color;
+    color: var(--tertiary-text-color);
     transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .address__link {
-    color: $address-link-color;
+    color: var(--address-link-color);
 
     &:visited {
-        color: $address-link-color;
+        color: var(--address-link-color);
     }
 
     &:hover,
     &:focus {
-        color: $tertiary-text-color;
+        color: var(--tertiary-text-color);
     }
 
     &--white {
-        color: $tertiary-text-color;
+        color: var(--tertiary-text-color);
     }
+}
+
+.addres-sm-thumb {
+
+    @media screen and (min-width:768px) {
+        display: flex;
+    }
+
+    @media screen and (min-width:768px) and (max-width:1199px) {
+        margin-bottom: 48px;
+    }
+
 }
 
 /* стили списка соц-сетей */
@@ -66,13 +108,13 @@
 }
 
 .footer-sm__link {
-    background-color: $footer-sm-link-bg-color;
-    color: $tertiary-text-color;
-    transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+    background-color: var(--footer-sm-link-bg-color);
+    color: var(--tertiary-text-color);
+    transition: background-color var(--anim);
 
     &:hover,
     &:focus {
-        background-color: $accent-color;
+        background-color: var(--accent-color);
     }
 }
 
@@ -80,22 +122,45 @@
     --color1: currentColor
 }
 
+.footer-sm {
+
+    @media screen and (max-width: 767px) {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-bottom: 48px;
+    }
+
+    @media screen and (min-width:768px) and (max-width:1199px) {
+        margin-right: auto;
+    }
+}
+
 /* стили формы подписки */
 
 .subscription {
-    display: flex;
-    align-items: flex-start;
-    margin-left: 93px;
+
+    @media screen and (min-width: 1200px) {
+        display: flex;
+        align-items: flex-start;
+        margin-left: 93px;
+    }
+
 }
 
 .subscription__box {
     display: flex;
     flex-direction: column;
+
+    @media screen and (max-width:1199px) {
+        align-items: center;
+    }
 }
 
 .subscription__email {
     height: 50px;
-    width: 358px;
+    width: 100%;
+    max-width: 450px;
     padding-left: 16px;
     padding-top: 15px;
     padding-bottom: 15px;
@@ -110,14 +175,22 @@
     border: 1px solid rgba(255, 255, 255, 0.3);
     filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.15));
     border-radius: 4px;
+
+    @media screen and (min-width: 1200px) {
+        width: 358px;
+    }
 }
 
 .subscription__btn {
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-top: 48px;
-    margin-left: 12px;
+    margin-top: 20px;
+
+    @media screen and (min-width: 1200px) {
+        margin-top: 48px;
+        margin-left: 12px;
+    }
 }
 
 .subscription__icon {
