@@ -509,23 +509,23 @@ img {
     }
 }
 
-.mobile-btn:hover .mobile-nav__close {
+.mobile-btn:hover .mobile-nav__icon-close {
     fill: var(--accent-color)
 }
 
-.mobile-btn:hover .mobile-nav__menu {
+.mobile-btn:hover .mobile-nav__icon-menu {
     fill: var(--accent-color)
 }
 
-.mobile-btn.is-open .mobile-nav__close {
+.mobile-btn.is-open .mobile-nav__icon-close {
     display: block
 }
 
-.mobile-btn.is-open .mobile-nav__menu {
+.mobile-btn.is-open .mobile-nav__icon-menu {
     display: none
 }
 
-.mobile-btn .mobile-nav__close {
+.mobile-btn .mobile-nav__icon-close {
     display: none
 }
 
